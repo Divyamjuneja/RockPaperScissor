@@ -1,6 +1,6 @@
 const option1 = "rock";
 const option2 = "scissor";
-const option3 = "Paper";
+const option3 = "paper";
 
 const result1 = "won";
 const result2 = "tie";
@@ -10,8 +10,12 @@ let counterPlayer=0;
 let counterComputer=0;
 
 let computerChoice = undefined;
-let playerChoice = "sCissor".toLowerCase();
 let computerSelection = getComputerChoice();
+
+function getPlayerChoice(){
+    let playerChoice = window.prompt("Enter your choice").toLowerCase();
+    return playerChoice;
+}
 
 function getComputerChoice(){
     let selection = Math.random();
@@ -69,30 +73,55 @@ function round(playerSelection,computerSelection){
     }
 }
 
-function ifTie(){
-    if(round(playerChoice,getComputerChoice()) == result2){    
-        return round(playerChoice,getComputerChoice());
-    }
-}
+// function ifTie(){
+//     if(round(playerChoice,getComputerChoice()) == result2){    
+//         return round(playerChoice,getComputerChoice());
+//     }
+// }
 
 function game(){
     //Best of 5
-    let i=0;
-    while(i<5){
-        ifTie();
-        i++;
+    let i=1;
+    while(i<=5){
+        let playerChoice = getPlayerChoice();
+        let computerChoice = getComputerChoice();
+        let opRound = round(playerChoice,computerChoice);
+
+        if( opRound == result2){ 
+            console.log("------------------")
+            console.log("player chose " + playerChoice);
+            console.log("computer chose " + computerChoice);
+            console.log("Tie, Enter the value again!")
+            continue;
+        }
+        else{
+            if (opRound == result1){
+                counterPlayer++;
+                console.log("------------------")
+                console.log("player chose " + playerChoice);
+                console.log("computer chose " + computerChoice);
+                console.log("Round " + i + " is won by player:" + counterPlayer);
+            }
+            else if(opRound == result3){
+                counterComputer++;
+                console.log("-------------------")
+                console.log("computer chose " + computerChoice);
+                console.log("player chose " + playerChoice);
+                console.log("Round " + i + " is won by computer:" + counterComputer);
+            }
+            i++;
+        }
+    }
+    if(counterPlayer>counterComputer){
+        console.log("player wins")
+    }
+    else{
+        console.log("computer wins")
     }
     }
 
 game();
 
 function updateScore(){
-    if (round() == result1){
-        counterPlayer++;
-        console.log(counterPlayer);
-    }
-    else if(round() == result3){
-        counterComputer++;
-        console.log(counterComputer);
-    }
+    
 }
