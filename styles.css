@@ -37,6 +37,13 @@ button > img{
     display: flex;
     gap: 10px;
     justify-content: flex-end;
+}
+
+#footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     font-size: larger;
     color: grey;
+
 }
