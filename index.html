@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="external.js"></script>
-
+    <script defer src="external.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body> 
+    <header>
+        <p class="heading">
+            Choose From 
+        </p>
+    </header>
+    <div>
+        <ul>   
+            <li>    
+                <button id="btn1">
+                    <img src="rock.png" alt="rock">
+                    
+                    Rock
+                </button>
+            </li>
+            <li>    
+                <button id="btn2">
+                    <img src="paper.png" alt="paper">
+                    
+                    Paper
+                </button>
+            </li>
+            <li>    
+                <button id="btn3">
+                    <img src="scissor.png" alt="scissor">
+                    
+                    Scissor
+                </button>
+            </li>
+        </ul>
+        <div id = "score">
+            <p>Won:</p>
+            <p>Lost:</p>
+            <p>Draw:</p>
+        </div>
+    </div>
 </body>
 </html>
